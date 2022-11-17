@@ -11,6 +11,12 @@ export default {
 </script>
 
 <template>
+
+  <div class="container">
+
+    <AppCard/>
+
+  </div>
   
 </template>
 
