@@ -1,9 +1,16 @@
 <script>
 
+import { store } from '../data/store';
+
 import AppCard from './AppCard.vue';
 
 export default {
   name: "AppCardWrapper",
+  data() {
+    return {
+      store
+    }
+  },
   components:{
     AppCard
   }
@@ -15,7 +22,7 @@ export default {
   <div class="container styled">
 
     <div class="element-counter">
-      <h5><span>0</span> Element found</h5>
+      <h5><span>{{store.charcters.length}}</span> Element found</h5>
     </div>
 
     <div class="card-container">

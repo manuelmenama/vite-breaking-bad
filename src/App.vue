@@ -1,6 +1,9 @@
 <script>
 
 import "../node_modules/@fontsource/lato/index.css";
+import {store} from './data/store'
+
+import axios from 'axios';
 
 import AppHeader from './components/AppHeader.vue';
 import AppSearch from './components/AppSearch.vue';
@@ -8,10 +11,33 @@ import AppCardWrapper from './components/AppCardWrapper.vue';
 
 export default {
   name: "App",
+  data(){
+    return {
+      store
+    }
+  },
   components: {
     AppHeader,
     AppSearch,
     AppCardWrapper
+  },
+  methods:{
+    getApiCaracters(){
+      axios.get(store.apiUrl)
+    .then(function( response ){
+
+      store.charcters = response.data
+
+      console.log(response.data);
+    })
+    .catch(function(error){
+      console.log(error);
+    })
+    }
+  },
+  mounted(){
+
+    this.getApiCaracters();
   }
 }
 </script>
