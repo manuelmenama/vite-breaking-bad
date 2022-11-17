@@ -23,12 +23,14 @@ export default {
   },
   methods:{
     getApiCaracters(){
+      store.isLoaded = false;
       axios.get(store.apiUrl)
     .then(function( response ){
 
       store.charcters = response.data
 
       console.log(response.data);
+      store.isLoaded=true;
     })
     .catch(function(error){
       console.log(error);

@@ -3,16 +3,18 @@
 import { store } from '../data/store';
 
 import AppCard from './AppCard.vue';
+import LoadingCompVue from './LoadingComp.vue';
 
 export default {
   name: "AppCardWrapper",
   data() {
     return {
-      store
+      store,
     }
   },
   components:{
-    AppCard
+    AppCard,
+    LoadingCompVue
   }
 }
 </script>
@@ -25,12 +27,18 @@ export default {
       <h5><span>{{store.charcters.length}}</span> Element found</h5>
     </div>
 
-    <div class="card-container">
+    <div class="card-container" v-if="store.isLoaded">
       <AppCard
         v-for="character in store.charcters"
+        
         :key="character.char_id"
         :character="character"/>
-    </div>
+
+      </div>
+      <div v-else>
+
+        <LoadingCompVue/>
+      </div>
 
   </div>
   
