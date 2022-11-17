@@ -13,8 +13,8 @@ export default {
   <div class="card">
     <img :src="character.img" alt="">
 
-    <h3>{{character.name}}</h3>
-    <h5>{{character.status}}</h5>
+    <h5>{{character.name}}</h5>
+    <h6>{{character.status}}</h6>
 
   </div>
   
@@ -31,12 +31,17 @@ export default {
   background-color: $primary-color;
   margin: 10px;
   text-align: center;
-  h3{
-    color: white;
-    text-transform: uppercase;
+  img{
+    margin-bottom: 1rem;
   }
   h5{
     color: white;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  h6{
+    color: white;
+    margin-bottom: 1rem;
   }
 
 }
