@@ -5,6 +5,10 @@ export default {
 </script>
 
 <template>
+
+  <div class="input-space">
+    <p>SELECT</p>
+  </div>
   
 </template>
 

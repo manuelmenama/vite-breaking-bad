@@ -12,9 +12,15 @@ export default {
 
 <template>
 
-  <div class="container">
+  <div class="container styled">
 
-    <AppCard/>
+    <div class="element-counter">
+      <h5><span>0</span> Element found</h5>
+    </div>
+
+    <div class="card-container">
+      <AppCard/>
+    </div>
 
   </div>
   
@@ -22,5 +28,23 @@ export default {
 
 
 <style lang="scss" scoped>
+
+@use '../styles/partials/variables' as *;
+@use '../styles/partials/mixin' as *;
+
+.styled{
+  background-color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  .card-container{
+    @include flex('only');
+    flex-wrap: wrap;
+  }
+  .element-counter{
+    background-color: darken($primary-color, 5%);
+    margin: 10px 10px;
+    padding: 10px 20px;
+  }
+}
 
 </style>
