@@ -26,7 +26,10 @@ export default {
     </div>
 
     <div class="card-container">
-      <AppCard/>
+      <AppCard
+        v-for="character in store.charcters"
+        :key="character.char_id"
+        :character="character"/>
     </div>
 
   </div>
