@@ -24,7 +24,11 @@ export default {
   methods:{
     getApiCaracters(){
       store.isLoaded = false;
-      axios.get(store.apiUrl)
+      axios.get(store.apiUrl, {
+        params: {
+          category: store.selectedSeries
+        }
+      })
     .then(function( response ){
 
       store.charcters = response.data
@@ -50,7 +54,8 @@ export default {
 
   <main>
 
-    <AppSearch/>
+    <AppSearch
+      @startFilter="getApiCaracters()"/>
     <AppCardWrapper/>
 
   </main>

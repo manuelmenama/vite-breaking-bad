@@ -26,6 +26,8 @@ export default {
 
 header{
   @include flex('align-center');
+
+  margin-bottom: 2rem;
 }
 .logo{
   background-color: white;

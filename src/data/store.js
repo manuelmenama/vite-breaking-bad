@@ -4,6 +4,7 @@ export const store = reactive({
 
   apiUrl: 'https://www.breakingbadapi.com/api/characters',
   charcters: [],
-  isLoaded: false
+  isLoaded: false,
+  selectedSeries: ''
 
 });

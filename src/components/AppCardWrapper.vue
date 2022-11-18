@@ -15,6 +15,11 @@ export default {
   components:{
     AppCard,
     LoadingCompVue
+  },
+  computed: {
+    getArrayLenght() {
+      return store.charcters.length
+    }
   }
 }
 </script>
@@ -24,7 +29,7 @@ export default {
   <div class="container styled">
 
     <div class="element-counter">
-      <h5><span>{{store.charcters.length}}</span> Element found</h5>
+      <h5><span>{{getArrayLenght}}</span> Element found</h5>
     </div>
 
     <div class="card-container" v-if="store.isLoaded">
